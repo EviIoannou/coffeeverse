@@ -8,6 +8,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css';
 
 Vue.config.productionTip = false;
 
+// Use Bootstrap-Vue in the whole project
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 
