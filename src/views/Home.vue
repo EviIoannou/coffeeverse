@@ -2,21 +2,24 @@
   <div class="home">
     <hero-image />
     <order-section />
+    <company-values />
+    <!-- <menu-links /> -->
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HeroImage from '../components/Home/HeroImage.vue';
-import OrderSection from '../components/Home/OrderSection.vue';
+  import CompanyValues from '../components/Home/CompanyValues.vue'
+  import HeroImage from '../components/Home/HeroImage.vue'
+  // import MenuLinks from '../components/Home/MenuLinks.vue'
+  import OrderSection from '../components/Home/OrderSection.vue'
 
-
-export default {
-  name: "Home",
-  components: {
-    HeroImage,
-    OrderSection,
-  },
-};
+  export default {
+    name: 'Home',
+    components: {
+      CompanyValues,
+      HeroImage,
+      // MenuLinks,
+      OrderSection
+    }
+  }
 </script>
-
