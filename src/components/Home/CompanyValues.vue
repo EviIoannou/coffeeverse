@@ -1,5 +1,6 @@
 <template>
-    <b-container fluid>
+    <b-container fluid class="mt-5">
+        <h1 class="h2">The coffeeverse experience</h1>
         <b-row align-h="around">
             <b-col xs="12" md="3" class="m-2 mt-0 m-md-0 values-col">
                 <b-img 
@@ -48,6 +49,12 @@ export default {
 </script>
 
 <style scoped>
+    h1.h2 {
+        color: #17433E;
+        font-weight: normal;
+        text-align: center;
+    }
+    
     .values-col {
         display: flex;
         flex-direction: column;

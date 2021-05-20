@@ -3,14 +3,14 @@
     <hero-image />
     <order-section />
     <company-values />
-    <!-- <menu-links /> -->
+    <menu-links />
   </div>
 </template>
 
 <script>
   import CompanyValues from '../components/Home/CompanyValues.vue'
   import HeroImage from '../components/Home/HeroImage.vue'
-  // import MenuLinks from '../components/Home/MenuLinks.vue'
+  import MenuLinks from '../components/Home/MenuLinks.vue'
   import OrderSection from '../components/Home/OrderSection.vue'
 
   export default {
@@ -18,7 +18,7 @@
     components: {
       CompanyValues,
       HeroImage,
-      // MenuLinks,
+      MenuLinks,
       OrderSection
     }
   }
