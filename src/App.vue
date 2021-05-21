@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <b-navbar toggleable="md">
-      <b-navbar-brand href="#">
+      <b-navbar-brand to="/">
         <b-img
           class="logo"
           src="https://firebasestorage.googleapis.com/v0/b/coffeeverse-by-evi.appspot.com/o/Website%20images%2FCoffeeVerseLogo.png?alt=media&token=f43f1ff9-b409-4a4a-b9af-ef2eb184ba1b"
@@ -16,8 +16,18 @@
       </b-navbar-nav>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-md-auto m-0">
-          <b-nav-item class="mr-3" href="#" active>Home</b-nav-item>
-          <b-nav-item class="mr-3" href="#">Drinks</b-nav-item>
+          <b-nav-item
+            class="mr-3"
+            to="/"
+            :class="{ active: $route.name === 'Home' }"
+            >Home</b-nav-item
+          >
+          <b-nav-item
+            class="mr-3"
+            to="/drinks"
+            :class="{ active: $route.name === 'Drinks' }"
+            >Drinks</b-nav-item
+          >
           <b-nav-item class="mr-3" href="#">Snacks</b-nav-item>
           <b-nav-item class="mr-3" href="#">Order status</b-nav-item>
         </b-navbar-nav>
