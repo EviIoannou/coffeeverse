@@ -28,5 +28,10 @@
   }
   #heroImage .btn {
     background-color: #276f65;
+    border: none;
+    font-size: 20px;
+  }
+  #heroImage .lead {
+    font-size: 22px;
   }
 </style>

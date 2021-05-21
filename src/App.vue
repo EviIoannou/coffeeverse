@@ -56,9 +56,6 @@
   .logo {
     height: 40px;
   }
-  p {
-    font-size: 14px;
-  }
 
   @media only screen and (max-width: 768px) {
     .navbar-light .navbar-nav .active {
