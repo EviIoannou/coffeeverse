@@ -6,3 +6,9 @@
     <router-view />
   </div>
 </template>
+
+<style>
+    p {
+      font-size: 14px;
+    }
+</style>

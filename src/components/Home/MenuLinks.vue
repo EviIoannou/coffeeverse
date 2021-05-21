@@ -1,6 +1,6 @@
 <template>
     <b-container fluid id="order" class="mt-5 mb-3">
-        <h1 class="h2">Discover our menu</h1>
+        <h1 class="h3">Discover our menu</h1>
         <b-row align-h="around">
             <b-col xs="12" md="4" class="m-2 mt-0 m-md-0 menu-col">
                 <b-img 
@@ -8,7 +8,7 @@
                     fluid
                     src="https://firebasestorage.googleapis.com/v0/b/coffeeverse-by-evi.appspot.com/o/Website%20images%2Ficons8-coffee-to-go-80.png?alt=media&token=0a4ff4b3-fcea-4931-bc63-8bf5fcd0648c"></b-img>
                 <div class="menu-content ml-2">
-                    <h2 class="h3 menu-title">Drinks</h2>
+                    <h2 class="h4 menu-title">Drinks</h2>
                     <p>Coffee or tea? You can find anything in our drinks selection</p>
                     <b-button class="menu-link">Go to drinks</b-button>
                 </div>
@@ -19,7 +19,7 @@
                     fluid
                     src="https://firebasestorage.googleapis.com/v0/b/coffeeverse-by-evi.appspot.com/o/Website%20images%2Ficons8-sandwich-80.png?alt=media&token=d9c4a9ef-1043-4c38-a0e8-1e8ad24439f2"></b-img>
                 <div class="menu-content ml-2">
-                    <h2 class="h3 menu-title">Snacks</h2>
+                    <h2 class="h4 menu-title">Snacks</h2>
                     <p>No fika is complete with a snack! Salty or sweet, vegan or lactose free, we got you</p>
                     <b-button class="menu-link">Go to snacks</b-button>
                 </div>
@@ -35,7 +35,7 @@ export default {
 </script>
 
 <style scoped>
-    h1.h2 {
+    h1.h3 {
         color: #17433E;
         font-weight: normal;
         text-align: center;

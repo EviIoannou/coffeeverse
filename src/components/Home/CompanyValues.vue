@@ -1,13 +1,13 @@
 <template>
     <b-container fluid class="mt-5">
-        <h1 class="h2">The coffeeverse experience</h1>
+        <h1 class="h3">The coffeeverse experience</h1>
         <b-row align-h="around">
             <b-col xs="12" md="3" class="m-2 mt-0 m-md-0 values-col">
                 <b-img 
                     class="values-img"
                     fluid
                     src="https://firebasestorage.googleapis.com/v0/b/coffeeverse-by-evi.appspot.com/o/Website%20images%2Fcoffee-variety.png?alt=media&token=c2e68591-a6fd-40ef-9a5c-e9607d0bfbb1"></b-img>
-                <h2 class="h3 values-title">Large variety</h2> 
+                <h2 class="h4 values-title">Large variety</h2> 
                 <div class="values-content mt-2">
                     <p>Enjoy your favourite drink or choose a delicious snack to go 
                         with your coffee from a variety of coffee shops around Gothenburg.
@@ -19,7 +19,7 @@
                     class="values-img"
                     fluid 
                     src="https://firebasestorage.googleapis.com/v0/b/coffeeverse-by-evi.appspot.com/o/Website%20images%2Fclip-online-food-delivery.png?alt=media&token=d1521c03-5b54-49b9-8b6d-a9633a3f6b09"></b-img>
-                <h2 class="h3 values-title">Easy and safe payment</h2>
+                <h2 class="h4 values-title">Easy and safe payment</h2>
                 <div class="values-content mt-2">
                     <p>Pay with credit card or Swish quickly, easy and most importantly safe. 
                         Focus on enjoying your fika and let us take care of a secure payment.
@@ -31,7 +31,7 @@
                     class="values-img"
                     fluid 
                     src="https://firebasestorage.googleapis.com/v0/b/coffeeverse-by-evi.appspot.com/o/Website%20images%2Ffood-delivery.png?alt=media&token=4cab32f2-64b4-4eca-b496-18aeada8b047"></b-img>
-                <h2 class="h3 values-title">Quick delivery</h2>
+                <h2 class="h4 values-title">Quick delivery</h2>
                 <div class="values-content mt-2">
                     <p>Our delivery team ensures that your coffee and snack are at your door as soon
                         as possible, exactly how warm or cold they should be!
@@ -49,7 +49,7 @@ export default {
 </script>
 
 <style scoped>
-    h1.h2 {
+    h1.h3 {
         color: #17433E;
         font-weight: normal;
         text-align: center;
