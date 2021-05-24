@@ -1,6 +1,6 @@
 <template>
-  <div>
+  <b-container>
     <p>Drinks section</p>
-    <p>database</p>
-  </div>
+    <p v-for="drink in $store.state.drinks" :key="drink.id">{{ drink.name }}</p>
+  </b-container>
 </template>

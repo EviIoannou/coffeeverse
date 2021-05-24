@@ -41,7 +41,13 @@
   </div>
 </template>
 <script>
-  // import db from '../server/firebaseApp'
+  import functions from '../server/functions'
+
+  export default {
+    mounted() {
+      functions.fetchDrinks()
+    }
+  }
 </script>
 
 <style>
