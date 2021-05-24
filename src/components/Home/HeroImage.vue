@@ -19,7 +19,7 @@
     background-size: cover;
     background-position: 90% 60%;
     color: #0d2522;
-    height: 500px;
+    height: 100vh;
   }
 
   #heroImage * {
@@ -27,6 +27,7 @@
       'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif,
       'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
       'Noto Color Emoji';
+    margin-bottom: 0.8em;
   }
   #heroImage .btn {
     background-color: #276f65;
@@ -35,5 +36,11 @@
   }
   #heroImage .lead {
     font-size: 22px;
+  }
+
+  .jumbotron-fluid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 </style>
