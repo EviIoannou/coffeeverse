@@ -1,9 +1,6 @@
 <template>
-  <div>Drinks section</div>
+  <div>
+    <p>Drinks section</p>
+    <p>database</p>
+  </div>
 </template>
-
-<script>
-  export default {}
-</script>
-
-<style></style>

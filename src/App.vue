@@ -40,6 +40,9 @@
     <router-view />
   </div>
 </template>
+<script>
+  // import db from '../server/firebaseApp'
+</script>
 
 <style>
   * {
