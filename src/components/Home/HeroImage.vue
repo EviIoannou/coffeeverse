@@ -19,7 +19,9 @@
     background-size: cover;
     background-position: 90% 60%;
     color: #0d2522;
+    height: 500px;
   }
+
   #heroImage * {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
       'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif,
