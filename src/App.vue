@@ -40,6 +40,15 @@
     <router-view />
   </div>
 </template>
+<script>
+  import functions from '../server/functions'
+
+  export default {
+    mounted() {
+      functions.fetchDrinks()
+    }
+  }
+</script>
 
 <style>
   * {
