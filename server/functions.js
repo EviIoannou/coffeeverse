@@ -1,4 +1,6 @@
 import db from './firebaseApp';
+
+//import vuex store in order to access it from this js file:
 import store from '../src/store';
 
 let fetchDrinks = () => {
@@ -10,7 +12,19 @@ let fetchDrinks = () => {
           querySnapshot.forEach((doc) => {
             drinksData.push({
               id: doc.id,
-              name: doc.data().Name
+              name: doc.data().Name,
+              image: doc.data().Image,
+              rating: doc.data().Rating,
+              votes: doc.data()["Ratings amount"],
+              price: doc.data().Price,
+              previousPrice: doc.data()["Previous price"],
+              shop: doc.data().Shop,
+              discount: doc.data().Discount,
+              decaf: doc.data().Decaf,
+              sweet: doc.data().Sweet,
+              hot: doc.data().Hot,
+              category: doc.data().Category,
+              noMilk: doc.data()["No-milk"],
             })
             console.log(doc.id, ' => ', doc.data())
           })
