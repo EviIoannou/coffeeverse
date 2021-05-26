@@ -12,7 +12,10 @@
       <b-navbar-toggle target="nav-collapse" class="ml-auto"></b-navbar-toggle>
       <!-- Show the cart nav-item HERE when screen is smaller than 768px -->
       <b-navbar-nav class="d-md-none">
-        <b-nav-item class="mr-2 ml-3" href="#">Cart</b-nav-item>
+        <b-nav-item class="mr-2 ml-3" href="#"
+          ><b-icon-cart-fill></b-icon-cart-fill>
+          <p>1</p></b-nav-item
+        >
       </b-navbar-nav>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-md-auto m-0">
@@ -34,7 +37,10 @@
       </b-collapse>
       <!-- Show the cart nav-item HERE when screen is larger than 768px -->
       <b-navbar-nav class="d-none d-md-block">
-        <b-nav-item class="mr-3" href="#">Cart</b-nav-item>
+        <b-nav-item class="mr-3" href="#"
+          ><b-icon-cart-fill></b-icon-cart-fill>
+          <span class="amount">0</span>
+        </b-nav-item>
       </b-navbar-nav>
     </b-navbar>
     <router-view />
@@ -53,6 +59,13 @@
 <style>
   * {
     font-family: 'Montserrat', sans-serif;
+  }
+  .amount {
+    background-color: #f0f6f2;
+    border-radius: 50%;
+    color: #276f65;
+    font-size: 14px;
+    padding: 0.2em 0.6em;
   }
   .navbar-light .navbar-nav .nav-link {
     color: #17433e;
