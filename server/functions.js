@@ -2,9 +2,10 @@ import db from './firebaseApp';
 
 //import vuex store in order to access it from this js file:
 import store from '../src/store';
-let addToCart = (id) => {
+let addToCart = (id, category) => {
   store.commit('addItem', {
-    id: id
+    id: id,
+    category: category
   })
 }
 

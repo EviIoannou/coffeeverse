@@ -15,6 +15,7 @@ export default new Vuex.Store({
       if(!item) {
         state.cart.push({ 
           id: data.id, 
+          category: data.category,
           amount: 1, 
           // Random id with 10 digits: https://gist.github.com/lpf23/9762508
           cartId: parseInt(Math.random().toFixed(10).replace("0.","")) })

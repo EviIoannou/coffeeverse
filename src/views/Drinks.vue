@@ -59,8 +59,7 @@
   export default {
     methods: {
       addToCart(id) {
-        functions.addToCart(id)
-        console.log(this.$store.state.cart)
+        functions.addToCart(id, 'drinks')
       }
     }
   }
