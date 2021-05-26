@@ -36,10 +36,15 @@
 
             <div class="mt-3 price">
               <b-card-text>{{ drink.price }} kr</b-card-text>
-              <p class="h3">
-                <b-icon-plus-circle-fill
-                  ><b-button href="#"
-                /></b-icon-plus-circle-fill>
+              <p>
+                <b-button
+                  @click="addToCart(drink.id)"
+                  style="background-color: transparent; border: none"
+                >
+                  <b-icon-plus-circle-fill
+                    scale="1.5"
+                  ></b-icon-plus-circle-fill>
+                </b-button>
               </p>
             </div>
           </b-card>
@@ -50,7 +55,15 @@
 </template>
 
 <script>
-  export default {}
+  import functions from '../../server/functions'
+  export default {
+    methods: {
+      addToCart(id) {
+        functions.addToCart(id)
+        console.log(this.$store.state.cart)
+      }
+    }
+  }
 </script>
 
 <style scoped>
