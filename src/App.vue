@@ -37,13 +37,13 @@
       </b-collapse>
       <!-- Show the cart nav-item HERE when screen is larger than 768px -->
       <b-navbar-nav class="d-none d-md-block">
-        <b-nav-item class="mr-3" href="#"
+        <b-nav-item class="mr-3" to="/cart"
           ><b-icon-cart-fill></b-icon-cart-fill>
           <span class="amount">{{ itemsInCart }}</span>
         </b-nav-item>
       </b-navbar-nav>
     </b-navbar>
-    <router-view />
+    <router-view :items-in-cart="itemsInCart" />
   </div>
 </template>
 <script>
