@@ -3,8 +3,21 @@ import db from './firebaseApp';
 //import vuex store in order to access it from this js file:
 import store from '../src/store';
 
+//add item to cart
+let addToCart = (id, category) => {
+  store.commit('addItem', {
+    id: id,
+    category: category
+  })
+}
+
+//discard item(s)
+let discardItems = (cartId) => {
+  store.commit('discardItems', cartId)
+}
+
+//populate drinks array/data in vuex store
 let fetchDrinks = () => {
-      //populate drinks array/data in vuex store
       let drinksData = []
       db.collection('drinks')
         .get()
@@ -33,7 +46,7 @@ let fetchDrinks = () => {
         .then(() => {
           store.commit('populate', {
             category: 'drinks',
-            array: drinksData
+            items: drinksData
           })
         })
         .then(() => {
@@ -44,4 +57,4 @@ let fetchDrinks = () => {
         })
 };
 
-export default {fetchDrinks}
+export default {addToCart, discardItems ,fetchDrinks}

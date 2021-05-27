@@ -1,7 +1,7 @@
 <template>
   <b-container class="mb-3" fluid style="width: 90vw">
     <h1 class="h2">Drinks</h1>
-    <h2 class="h4">{{ $store.state.drinks.length }} results</h2>
+    <h2 class="h4 mb-4">{{ $store.state.drinks.length }} results</h2>
     <b-container fluid id="drinks-cards">
       <b-row>
         <b-col
@@ -36,10 +36,15 @@
 
             <div class="mt-3 price">
               <b-card-text>{{ drink.price }} kr</b-card-text>
-              <p class="h3">
-                <b-icon-plus-circle-fill
-                  ><b-button href="#"
-                /></b-icon-plus-circle-fill>
+              <p>
+                <b-button
+                  @click="addToCart(drink.id)"
+                  style="background-color: transparent; border: none"
+                >
+                  <b-icon-plus-circle-fill
+                    scale="1.5"
+                  ></b-icon-plus-circle-fill>
+                </b-button>
               </p>
             </div>
           </b-card>
@@ -50,7 +55,14 @@
 </template>
 
 <script>
-  export default {}
+  import functions from '../../server/functions'
+  export default {
+    methods: {
+      addToCart(id) {
+        functions.addToCart(id, 'drinks')
+      }
+    }
+  }
 </script>
 
 <style scoped>
@@ -70,6 +82,11 @@
     filter: drop-shadow(0px 2px 2px rgba(39, 111, 101, 0.46));
     border-radius: 5px;
     width: 80%;
+  }
+
+  #drinks-cards {
+    height: 70vh;
+    overflow-y: auto;
   }
 
   h1.h2,

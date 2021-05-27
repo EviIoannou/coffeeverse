@@ -12,7 +12,10 @@
       <b-navbar-toggle target="nav-collapse" class="ml-auto"></b-navbar-toggle>
       <!-- Show the cart nav-item HERE when screen is smaller than 768px -->
       <b-navbar-nav class="d-md-none">
-        <b-nav-item class="mr-2 ml-3" href="#">Cart</b-nav-item>
+        <b-nav-item class="mr-2 ml-3" href="#"
+          ><b-icon-cart-fill></b-icon-cart-fill>
+          <span class="amount">{{ $store.state.cart.length }}</span></b-nav-item
+        >
       </b-navbar-nav>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-md-auto m-0">
@@ -34,16 +37,29 @@
       </b-collapse>
       <!-- Show the cart nav-item HERE when screen is larger than 768px -->
       <b-navbar-nav class="d-none d-md-block">
-        <b-nav-item class="mr-3" href="#">Cart</b-nav-item>
+        <b-nav-item class="mr-3" to="/cart"
+          ><b-icon-cart-fill></b-icon-cart-fill>
+          <span class="amount">{{ itemsInCart }}</span>
+        </b-nav-item>
       </b-navbar-nav>
     </b-navbar>
-    <router-view />
+    <router-view :items-in-cart="itemsInCart" />
   </div>
 </template>
 <script>
   import functions from '../server/functions'
 
   export default {
+    computed: {
+      itemsInCart() {
+        if (this.$store.state.cart.length > 0) {
+          return this.$store.state.cart
+            .map((p) => p.amount)
+            .reduce((a, b) => a + b)
+        }
+        return 0
+      }
+    },
     mounted() {
       functions.fetchDrinks()
     }
@@ -53,6 +69,13 @@
 <style>
   * {
     font-family: 'Montserrat', sans-serif;
+  }
+  .amount {
+    background-color: #f0f6f2;
+    border-radius: 50%;
+    color: #276f65;
+    font-size: 14px;
+    padding: 0.2em 0.6em;
   }
   .navbar-light .navbar-nav .nav-link {
     color: #17433e;
