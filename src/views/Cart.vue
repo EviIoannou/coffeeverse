@@ -12,6 +12,7 @@
           class="mr-2"
           :disabled="itemsInCart == 0"
           variant="outline-danger"
+          @click="functions.discardItems"
           ><b-icon-trash></b-icon-trash> Disard all</b-button
         >
       </b-col>
@@ -22,9 +23,15 @@
 </template>
 
 <script>
+  import functions from '../../server/functions'
   import Empty from '../components/Cart/Empty.vue'
   import FullCart from '../components/Cart/FullCart.vue'
   export default {
+    data() {
+      return {
+        functions: functions
+      }
+    },
     components: { Empty, FullCart },
     props: ['itemsInCart']
   }

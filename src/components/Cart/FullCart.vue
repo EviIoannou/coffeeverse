@@ -36,7 +36,9 @@
                   >
                 </div>
 
-                <b-button variant="outline-danger"
+                <b-button
+                  variant="outline-danger"
+                  @click="functions.discardItems(product.cartId)"
                   ><b-icon-trash></b-icon-trash> Disard</b-button
                 >
               </b-card-body>
@@ -52,7 +54,14 @@
 </template>
 
 <script>
+  import functions from '../../../server/functions'
+
   export default {
+    data() {
+      return {
+        functions: functions
+      }
+    },
     computed: {
       addedInCart() {
         let products = this.$store.state.cart.map((p) => p)
