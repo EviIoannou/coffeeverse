@@ -1,7 +1,7 @@
 <template>
   <b-container class="mb-3" fluid style="width: 90vw">
     <h1 class="h2">Drinks</h1>
-    <h2 class="h4">{{ $store.state.drinks.length }} results</h2>
+    <h2 class="h4 mb-4">{{ $store.state.drinks.length }} results</h2>
     <b-container fluid id="drinks-cards">
       <b-row>
         <b-col
@@ -82,6 +82,11 @@
     filter: drop-shadow(0px 2px 2px rgba(39, 111, 101, 0.46));
     border-radius: 5px;
     width: 80%;
+  }
+
+  #drinks-cards {
+    height: 70vh;
+    overflow-y: auto;
   }
 
   h1.h2,

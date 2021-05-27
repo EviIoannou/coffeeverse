@@ -12,14 +12,14 @@
       >
         <b-card class="product-card" no-body>
           <b-row no-gutters>
-            <b-col md="6">
+            <b-col lg="6">
               <b-card-img
                 :src="product.image"
                 alt="Image"
                 class="ml-2 mt-4 product-image rounded-0"
               ></b-card-img>
             </b-col>
-            <b-col md="6">
+            <b-col lg="6">
               <b-card-body>
                 <b-card-title class="product-name text-capitalize">{{
                   product.name
@@ -27,8 +27,8 @@
                 <b-card-sub-title class="shop text-capitalize">{{
                   product.shop
                 }}</b-card-sub-title>
-                <div class="info mt-3">
-                  <b-card-text class="mr-4"
+                <div class="info my-3">
+                  <b-card-text class="mb-1"
                     >{{ product.amount }} items</b-card-text
                   >
                   <b-card-text
@@ -94,7 +94,6 @@
   }
   .card.product-card {
     border: none;
-    width: 80%;
   }
   h4,
   h6,
@@ -104,6 +103,8 @@
 
   .info {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .product-name {
@@ -121,9 +122,9 @@
       overflow-y: auto;
     }
   }
-  @media only screen and (min-width: 768px) {
-    .product-image {
-      width: 10vw;
+  @media only screen and (min-width: 1200px) {
+    .card.product-card {
+      width: 80%;
     }
   }
 </style>
