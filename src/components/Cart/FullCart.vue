@@ -78,19 +78,11 @@
         let productsAdded = []
         products.forEach((p) => {
           //loop through all products in the cart
-          if (p.category == 'drinks') {
-            //if category is 'drinks', go to the drinks array
-            let product = this.$store.state.drinks.find((d) => d.id == p.id) //find the product
-            productsAdded.push(
-              // push in the local array, plus assign two more necessary properties
-              Object.assign(product, { amount: p.amount, cartId: p.cartId })
-            )
-          } else {
-            //if category is 'snacks', go to the snacks array
-            productsAdded.push(
-              this.$store.state.snacks.find((s) => s.id == p.id)
-            )
-          }
+          let product = this.$store.state[p.type].find((i) => i.id == p.id) //find the product
+          productsAdded.push(
+            // push in the local array, plus assign two more necessary properties
+            Object.assign(product, { amount: p.amount, cartId: p.cartId })
+          )
         })
         return productsAdded
       },

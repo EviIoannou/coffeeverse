@@ -4,10 +4,10 @@ import db from './firebaseApp';
 import store from '../src/store';
 
 //add item to cart
-let addToCart = (id, category) => {
+let addToCart = (id, type) => {
   store.commit('addItem', {
     id: id,
-    category: category
+    type: type
   })
 }
 

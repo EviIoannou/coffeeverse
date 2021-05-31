@@ -16,7 +16,7 @@ export default new Vuex.Store({
       if(!item) {
         state.cart.push({ 
           id: data.id, 
-          category: data.category,
+          type: data.type,
           amount: 1, 
           // Random id with 10 digits: https://gist.github.com/lpf23/9762508
           cartId: parseInt(Math.random().toFixed(10).replace("0.","")) })
@@ -27,7 +27,7 @@ export default new Vuex.Store({
       state.orders.push({
         orderId: parseInt(Math.random().toFixed(10).replace("0.","")),
         countdown: '30:00',
-        items: state.cart.map((i) =>( {id: i.id, category: i.category, amount: i.amount }))
+        items: state.cart.map((i) =>( {id: i.id, type: i.type, amount: i.amount }))
        })
     },
 

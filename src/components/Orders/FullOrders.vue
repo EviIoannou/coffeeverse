@@ -11,8 +11,8 @@
         <h2 class="h4">{{ orders.length }} ongoing orders</h2>
       </b-col>
     </b-row>
-    <b-row v-for="order in orders" :key="order.orderId">
-      <b-col>
+    <b-row align-h="center" v-for="order in orders" :key="order.orderId">
+      <b-col class="d-flex flex-column align-items-center">
         <div>
           <p>
             Delivered in <b-icon-clock></b-icon-clock> {{ order.countdown }}
@@ -21,7 +21,7 @@
           <div>
             <p v-b-toggle="`details-${order.orderId}`">Receipt</p>
             <b-collapse :id="`details-${order.orderId}`">
-              <p v-for="product in order.products" :key="product.id">
+              <p v-for="product in order.items" :key="product.id">
                 {{ product.amount }}x {{ product.name }}
                 {{ product.amount * product.price }} kr
               </p>
@@ -40,27 +40,21 @@
       orders() {
         let allOrders = this.$store.state.orders
         allOrders.forEach((order) => {
-          order.products = []
           order.items.forEach((i) => {
-            if (i.category == 'drinks') {
-              //if category is 'drinks', go to the drinks array
-              let product = this.$store.state.drinks.find((d) => d.id == i.id) //find the product
-              order.products.push(
-                // push in the local array, plus assign two more necessary properties
-                Object.assign(product, { amount: i.amount })
-              )
-            }
+            let product = this.$store.state[i.type].find(
+              //find the product
+              (p) => p.id == i.id
+            )
+            Object.assign(i, product)
           })
         })
         return allOrders
       }
     },
-    mounted() {
-      console.log(this.$store.state.orders)
-    },
+
     methods: {
       totalPrice(order) {
-        let productPrices = order.products
+        let productPrices = order.items
           .map((p) => p.price * p.amount)
           .reduce((a, b) => a + b)
 
