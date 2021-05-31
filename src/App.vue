@@ -14,9 +14,7 @@
       <b-navbar-nav class="d-md-none">
         <b-nav-item class="mr-2 ml-3" href="#"
           ><b-icon-cart-fill></b-icon-cart-fill>
-          <span class="amount">{{
-            $store.getters.itemsInCart()
-          }}</span></b-nav-item
+          <span class="amount">{{ itemsInCart }}</span></b-nav-item
         >
       </b-navbar-nav>
       <b-collapse id="nav-collapse" is-nav>
@@ -46,7 +44,7 @@
       <b-navbar-nav class="d-none d-md-block">
         <b-nav-item class="mr-3" to="/cart"
           ><b-icon-cart-fill></b-icon-cart-fill>
-          <span class="amount">{{ $store.getters.itemsInCart() }}</span>
+          <span class="amount">{{ itemsInCart }}</span>
         </b-nav-item>
       </b-navbar-nav>
     </b-navbar>
@@ -59,9 +57,7 @@
   export default {
     computed: {
       itemsInCart() {
-        return this.$store.state.cart
-          .map((p) => p.amount)
-          .reduce((a, b) => a + b)
+        return this.$store.getters.itemsInCart()
       }
     },
 
