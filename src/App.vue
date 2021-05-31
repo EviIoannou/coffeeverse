@@ -32,7 +32,12 @@
             >Drinks</b-nav-item
           >
           <b-nav-item class="mr-3" href="#">Snacks</b-nav-item>
-          <b-nav-item class="mr-3" href="#">Order status</b-nav-item>
+          <b-nav-item
+            class="mr-3"
+            to="/orders"
+            :class="{ active: $route.name === 'Order Status' }"
+            >Order status</b-nav-item
+          >
         </b-navbar-nav>
       </b-collapse>
       <!-- Show the cart nav-item HERE when screen is larger than 768px -->

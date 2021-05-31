@@ -48,8 +48,20 @@
       </b-col>
     </b-row>
     <b-row align-h="center" class="my-4">
-      <p class="h4">Total: {{ totalPrice }} kr</p></b-row
-    >
+      <b-col
+        class="d-flex flex-column align-items-center"
+        cols="12"
+        sm="6"
+        md="3"
+      >
+        <p class="h4">Total: {{ totalPrice }} kr</p>
+        <b-button class="checkout-link"
+          ><b-link to="/orders"
+            >Checkout<b-icon-credit-card class="ml-3"></b-icon-credit-card
+          ></b-link>
+        </b-button>
+      </b-col>
+    </b-row>
   </b-container>
 </template>
 
@@ -98,7 +110,7 @@
 
 <style scoped>
   .cart-items {
-    height: 70vh;
+    height: 65vh;
     overflow-y: auto;
   }
   .card.product-card {
@@ -124,7 +136,16 @@
     font-family: 'Patrick Hand';
     font-size: 18px;
   }
-
+  .checkout-link {
+    background-color: #39a88b;
+    border: none;
+    border-radius: 10px;
+    padding: 0.7em;
+  }
+  .checkout-link a {
+    color: #f0f6f2;
+    text-decoration: none;
+  }
   @media only screen and (max-width: 768px) {
     .cart-items {
       height: 60vh;
