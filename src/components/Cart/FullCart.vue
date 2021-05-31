@@ -74,7 +74,7 @@
     },
     computed: {
       addedInCart() {
-        let products = this.$store.state.cart.map((p) => p)
+        let products = this.$store.state.cart
         let productsAdded = []
         products.forEach((p) => {
           //loop through all products in the cart
@@ -106,12 +106,13 @@
 
     methods: {
       async createOrder() {
+        // Add an object to the orders in Vuex store:
         await functions.addOrder()
+        // Then empty the cart
         await functions.discardItems()
+        await console.log(this.$store.state.cart)
+        // Last, go to view the orders
         await this.$router.push('/orders')
-        /* Add an object to the orders in Vuex store:
-        {orderid, countdown, items[here add the cart items]} */
-        /* Then empty the cart*/
       }
     }
   }

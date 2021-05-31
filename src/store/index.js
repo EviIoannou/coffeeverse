@@ -25,7 +25,7 @@ export default new Vuex.Store({
 
     addOrder(state) {
       state.orders.push({
-        orderid: parseInt(Math.random().toFixed(10).replace("0.","")),
+        orderId: parseInt(Math.random().toFixed(10).replace("0.","")),
         countdown: '30:00',
         items: state.cart.map((i) =>( {id: i.id, category: i.category, amount: i.amount }))
        })
