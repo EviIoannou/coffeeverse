@@ -11,6 +11,11 @@ let addToCart = (id, category) => {
   })
 }
 
+//add an order 
+let addOrder = () => {
+  store.commit('addOrder')
+}
+
 //discard item(s)
 let discardItems = (cartId) => {
   store.commit('discardItems', cartId)
@@ -57,4 +62,4 @@ let fetchDrinks = () => {
         })
 };
 
-export default {addToCart, discardItems ,fetchDrinks}
+export default {addOrder, addToCart, discardItems ,fetchDrinks}

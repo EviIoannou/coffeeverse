@@ -55,10 +55,8 @@
         md="3"
       >
         <p class="h4">Total: {{ totalPrice }} kr</p>
-        <b-button class="checkout-link"
-          ><b-link to="/orders"
-            >Checkout<b-icon-credit-card class="ml-3"></b-icon-credit-card
-          ></b-link>
+        <b-button class="checkout-link" @click="createOrder"
+          >Checkout<b-icon-credit-card class="ml-3"></b-icon-credit-card>
         </b-button>
       </b-col>
     </b-row>
@@ -103,6 +101,17 @@
           .reduce((a, b) => a + b)
 
         return productPrices
+      }
+    },
+
+    methods: {
+      async createOrder() {
+        await functions.addOrder()
+        await functions.discardItems()
+        await this.$router.push('/orders')
+        /* Add an object to the orders in Vuex store:
+        {orderid, countdown, items[here add the cart items]} */
+        /* Then empty the cart*/
       }
     }
   }
