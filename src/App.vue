@@ -85,7 +85,27 @@
   .logo {
     height: 40px;
   }
+  /* Scrollbar styling */
+  /* width */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
 
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #276f65;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #17433e;
+  }
+  /* *** */
   @media only screen and (max-width: 768px) {
     .navbar-light .navbar-nav .active {
       border: none;
