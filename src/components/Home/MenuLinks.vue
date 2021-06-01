@@ -11,7 +11,9 @@
         <div class="menu-content ml-2">
           <h2 class="h3 menu-title">Drinks</h2>
           <p>Coffee or tea? You can find anything in our drinks selection</p>
-          <b-button class="menu-link">Go to drinks</b-button>
+          <b-button class="menu-link"
+            ><b-link to="/drinks">Go to drinks</b-link>
+          </b-button>
         </div>
       </b-col>
       <b-col xs="12" md="3" class="m-2 mt-4 m-md-0 menu-col">
@@ -26,7 +28,9 @@
             No fika is complete with a snack! Salty or sweet, vegan or lactose
             free, we got you
           </p>
-          <b-button class="menu-link">Go to snacks</b-button>
+          <b-button class="menu-link"
+            ><b-link to="/snacks">Go to snacks</b-link></b-button
+          >
         </div>
       </b-col>
     </b-row>
@@ -61,6 +65,10 @@
     background-color: #39a88b;
     border-color: #39a88b;
     color: #f0f6f2;
+  }
+  .menu-link a {
+    color: #f0f6f2;
+    text-decoration: none;
   }
   .menu-title {
     font-family: 'Patrick Hand';

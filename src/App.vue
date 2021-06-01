@@ -33,7 +33,12 @@
             :class="{ active: $route.name === 'Drinks' }"
             >Drinks</b-nav-item
           >
-          <b-nav-item class="mr-3" href="#">Snacks</b-nav-item>
+          <b-nav-item
+            class="mr-3"
+            to="/snacks"
+            :class="{ active: $route.name === 'Snacks' }"
+            >Snacks</b-nav-item
+          >
           <b-nav-item
             class="mr-3"
             to="/orders"
@@ -59,6 +64,7 @@
   export default {
     mounted() {
       functions.fetchDrinks()
+      functions.fetchSnacks()
     }
   }
 </script>

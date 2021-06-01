@@ -60,6 +60,46 @@ let fetchDrinks = () => {
         .catch((error) => {
           console.log('Error getting documents: ', error)
         })
-};
+}
 
-export default {addOrder, addToCart, discardItems ,fetchDrinks}
+//populate snacks array/data in vuex store
+let fetchSnacks = () => {
+  let snacksData = []
+  db.collection('snacks')
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        snacksData.push({
+          id: doc.id,
+          name: doc.data().Name,
+          image: doc.data().Image,
+          rating: doc.data().Rating,
+          votes: doc.data()["Ratings amount"],
+          price: doc.data().Price,
+          previousPrice: doc.data()["Previous price"],
+          shop: doc.data().Shop,
+          discount: doc.data().Discount,
+          sweet: doc.data().Sweet,
+          vegan: doc.data().Vegan,
+          vegetarian: doc.data().Vegetarian,
+          ingredients: doc.data().Ingredients,
+        })
+        console.log(doc.id, ' => ', doc.data())
+      })
+      return snacksData
+    })
+    .then(() => {
+      store.commit('populate', {
+        category: 'snacks',
+        items: snacksData
+      })
+    })
+    .then(() => {
+      console.log(store.state.snacks)
+    })
+    .catch((error) => {
+      console.log('Error getting documents: ', error)
+    })
+}
+
+export default {addOrder, addToCart, discardItems ,fetchDrinks, fetchSnacks}
