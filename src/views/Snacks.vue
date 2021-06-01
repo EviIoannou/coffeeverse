@@ -2,7 +2,7 @@
   <b-container class="mb-3" fluid style="width: 90vw">
     <h1 class="h2">Snacks</h1>
     <h2 class="h4 mb-4">{{ $store.state.snacks.length }} results</h2>
-    <b-container fluid id="snacks-cards">
+    <b-container fluid class="display-cards">
       <b-row>
         <b-col
           class="mt-4"

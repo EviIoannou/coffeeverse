@@ -1,35 +1,35 @@
-.b-icon.bi {
+  .display-cards .b-icon.bi {
     color: #276f65;
   }
 
-  .card-body {
+  .display-cards .card-body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
   }
 
-  .card.product-card {
+  .display-cards .card.product-card {
     border: 1px solid rgba(39, 111, 101, 0.5);
     filter: drop-shadow(0px 2px 2px rgba(39, 111, 101, 0.46));
     border-radius: 5px;
     width: 80%;
   }
 
-  #drinks-cards, #snacks-cards {
+  .display-cards  {
     height: 70vh;
     overflow-y: auto;
   }
 
-  h1.h2,
-  h2.h4 {
+  .display-cards h1.h2,
+  .display-cards h2.h4 {
     color: #17433e;
   }
 
-  .info {
+  .display-cards .info {
     text-align: center;
   }
-  .price {
+  .display-cards .price {
     color: #0d2522;
     display: flex;
     align-items: baseline;
@@ -37,16 +37,16 @@
     width: 100%;
   }
 
-  .product-name {
+  .display-cards .product-name {
     font-size: 20px;
     text-transform: capitalize;
   }
 
-  .ratings {
+  .display-cards .ratings {
     color: #0d2522;
   }
 
-  .shop {
+  .display-cards .shop {
     color: rgba(13, 37, 34, 0.8) !important;
     font-family: 'Patrick Hand';
     font-size: 18px;
@@ -54,7 +54,7 @@
   }
 
   @media only screen and (min-width: 768px) {
-    .product-image {
+    .display-cards .product-image {
       width: 10vw;
     }
   }
