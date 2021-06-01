@@ -48,8 +48,18 @@
       </b-col>
     </b-row>
     <b-row align-h="center" class="my-4">
-      <p class="h4">Total: {{ totalPrice }} kr</p></b-row
-    >
+      <b-col
+        class="d-flex flex-column align-items-center"
+        cols="12"
+        sm="6"
+        md="3"
+      >
+        <p class="h4">Total: {{ totalPrice }} kr</p>
+        <b-button class="checkout-link" @click="createOrder"
+          >Checkout<b-icon-credit-card class="ml-3"></b-icon-credit-card>
+        </b-button>
+      </b-col>
+    </b-row>
   </b-container>
 </template>
 
@@ -64,23 +74,15 @@
     },
     computed: {
       addedInCart() {
-        let products = this.$store.state.cart.map((p) => p)
+        let products = this.$store.state.cart
         let productsAdded = []
         products.forEach((p) => {
           //loop through all products in the cart
-          if (p.category == 'drinks') {
-            //if category is 'drinks', go to the drinks array
-            let product = this.$store.state.drinks.find((d) => d.id == p.id) //find the product
-            productsAdded.push(
-              // push in the local array, plus assign two more necessary properties
-              Object.assign(product, { amount: p.amount, cartId: p.cartId })
-            )
-          } else {
-            //if category is 'snacks', go to the snacks array
-            productsAdded.push(
-              this.$store.state.snacks.find((s) => s.id == p.id)
-            )
-          }
+          let product = this.$store.state[p.type].find((i) => i.id == p.id) //find the product
+          productsAdded.push(
+            // push in the local array, plus assign two more necessary properties
+            Object.assign(product, { amount: p.amount, cartId: p.cartId })
+          )
         })
         return productsAdded
       },
@@ -92,13 +94,25 @@
 
         return productPrices
       }
+    },
+
+    methods: {
+      async createOrder() {
+        // Add an object to the orders in Vuex store:
+        await functions.addOrder()
+        // Then empty the cart
+        await functions.discardItems()
+        await console.log(this.$store.state.cart)
+        // Last, go to view the orders
+        await this.$router.push('/orders')
+      }
     }
   }
 </script>
 
 <style scoped>
   .cart-items {
-    height: 70vh;
+    height: 65vh;
     overflow-y: auto;
   }
   .card.product-card {
@@ -124,7 +138,16 @@
     font-family: 'Patrick Hand';
     font-size: 18px;
   }
-
+  .checkout-link {
+    background-color: #39a88b;
+    border: none;
+    border-radius: 10px;
+    padding: 0.7em;
+  }
+  .checkout-link a {
+    color: #f0f6f2;
+    text-decoration: none;
+  }
   @media only screen and (max-width: 768px) {
     .cart-items {
       height: 60vh;

@@ -17,14 +17,14 @@
         >
       </b-col>
     </b-row>
-    <empty v-if="itemsInCart == 0" />
+    <empty-cart v-if="itemsInCart == 0" />
     <full-cart v-else />
   </b-container>
 </template>
 
 <script>
   import functions from '../../server/functions'
-  import Empty from '../components/Cart/Empty.vue'
+  import EmptyCart from '../components/Cart/EmptyCart.vue'
   import FullCart from '../components/Cart/FullCart.vue'
   export default {
     data() {
@@ -32,8 +32,13 @@
         functions: functions
       }
     },
-    components: { Empty, FullCart },
-    props: ['itemsInCart']
+    computed: {
+      itemsInCart() {
+        return this.$store.getters.itemsInCart()
+      }
+    },
+
+    components: { EmptyCart, FullCart }
   }
 </script>
 

@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     cart: [],
     drinks: [],
+    orders: [],
     snacks: []
   },
   mutations: {
@@ -15,11 +16,19 @@ export default new Vuex.Store({
       if(!item) {
         state.cart.push({ 
           id: data.id, 
-          category: data.category,
+          type: data.type,
           amount: 1, 
           // Random id with 10 digits: https://gist.github.com/lpf23/9762508
           cartId: parseInt(Math.random().toFixed(10).replace("0.","")) })
       } else {item.amount+=1}
+    },
+
+    addOrder(state) {
+      state.orders.push({
+        orderId: parseInt(Math.random().toFixed(10).replace("0.","")),
+        countdown: '30:00',
+        items: state.cart.map((i) =>( {id: i.id, type: i.type, amount: i.amount }))
+       })
     },
 
     discardItems(state, cartId) {
@@ -36,6 +45,14 @@ export default new Vuex.Store({
       } state.snacks = data.items
     }
   },
-  actions: {},
-  modules: {},
+
+  getters:{
+    itemsInCart: (state) => () => {
+      if(state.cart.length > 0) {
+        let items = state.cart.map((p) => p.amount).reduce((a, b) => a + b)
+        return items
+      } return 0
+    } 
+  }, 
+
 });

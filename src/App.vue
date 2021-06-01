@@ -14,7 +14,9 @@
       <b-navbar-nav class="d-md-none">
         <b-nav-item class="mr-2 ml-3" href="#"
           ><b-icon-cart-fill></b-icon-cart-fill>
-          <span class="amount">{{ $store.state.cart.length }}</span></b-nav-item
+          <span class="amount">{{
+            $store.getters.itemsInCart()
+          }}</span></b-nav-item
         >
       </b-navbar-nav>
       <b-collapse id="nav-collapse" is-nav>
@@ -32,34 +34,29 @@
             >Drinks</b-nav-item
           >
           <b-nav-item class="mr-3" href="#">Snacks</b-nav-item>
-          <b-nav-item class="mr-3" href="#">Order status</b-nav-item>
+          <b-nav-item
+            class="mr-3"
+            to="/orders"
+            :class="{ active: $route.name === 'Order Status' }"
+            >Order status</b-nav-item
+          >
         </b-navbar-nav>
       </b-collapse>
       <!-- Show the cart nav-item HERE when screen is larger than 768px -->
       <b-navbar-nav class="d-none d-md-block">
         <b-nav-item class="mr-3" to="/cart"
           ><b-icon-cart-fill></b-icon-cart-fill>
-          <span class="amount">{{ itemsInCart }}</span>
+          <span class="amount">{{ $store.getters.itemsInCart() }}</span>
         </b-nav-item>
       </b-navbar-nav>
     </b-navbar>
-    <router-view :items-in-cart="itemsInCart" />
+    <router-view />
   </div>
 </template>
 <script>
   import functions from '../server/functions'
 
   export default {
-    computed: {
-      itemsInCart() {
-        if (this.$store.state.cart.length > 0) {
-          return this.$store.state.cart
-            .map((p) => p.amount)
-            .reduce((a, b) => a + b)
-        }
-        return 0
-      }
-    },
     mounted() {
       functions.fetchDrinks()
     }
@@ -88,7 +85,27 @@
   .logo {
     height: 40px;
   }
+  /* Scrollbar styling */
+  /* width */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
 
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #276f65;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #17433e;
+  }
+  /* *** */
   @media only screen and (max-width: 768px) {
     .navbar-light .navbar-nav .active {
       border: none;

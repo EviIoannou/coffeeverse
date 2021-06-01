@@ -4,11 +4,16 @@ import db from './firebaseApp';
 import store from '../src/store';
 
 //add item to cart
-let addToCart = (id, category) => {
+let addToCart = (id, type) => {
   store.commit('addItem', {
     id: id,
-    category: category
+    type: type
   })
+}
+
+//add an order 
+let addOrder = () => {
+  store.commit('addOrder')
 }
 
 //discard item(s)
@@ -57,4 +62,4 @@ let fetchDrinks = () => {
         })
 };
 
-export default {addToCart, discardItems ,fetchDrinks}
+export default {addOrder, addToCart, discardItems ,fetchDrinks}
