@@ -2,7 +2,7 @@
   <b-container class="mb-3" fluid style="width: 90vw">
     <h1 class="h2">Snacks</h1>
     <h2 class="h4 mb-4">{{ $store.state.snacks.length }} results</h2>
-    <b-container fluid id="snacks-cards">
+    <b-container fluid class="display-cards">
       <b-row>
         <b-col
           class="mt-4"
@@ -35,6 +35,9 @@
             </div>
 
             <div class="mt-3 price">
+              <p v-b-tooltip.hover.html.bottom :title="extraInfo(snack)">
+                <b-icon-info-circle scale="1.2"></b-icon-info-circle>
+              </p>
               <b-card-text>{{ snack.price }} kr</b-card-text>
               <p>
                 <b-button
@@ -60,6 +63,9 @@
     methods: {
       addToCart(id) {
         functions.addToCart(id, 'snacks')
+      },
+      extraInfo(product) {
+        return functions.extraInfo(product)
       }
     }
   }

@@ -12,7 +12,7 @@
       <b-navbar-toggle target="nav-collapse" class="ml-auto"></b-navbar-toggle>
       <!-- Show the cart nav-item HERE when screen is smaller than 768px -->
       <b-navbar-nav class="d-md-none">
-        <b-nav-item class="mr-2 ml-3" href="#"
+        <b-nav-item class="mr-2 ml-3" to="/cart"
           ><b-icon-cart-fill></b-icon-cart-fill>
           <span class="amount">{{
             $store.getters.itemsInCart()
