@@ -21,6 +21,23 @@ let discardItems = (cartId) => {
   store.commit('discardItems', cartId)
 }
 
+//extra info about an item
+let extraInfo = (product) => {
+  let info = Object.keys(product).filter(
+    (k) => product[k] == true && k != 'discount'
+  )
+
+  if (info.length > 0) {
+    let infoDisplayed = info
+      .map((i) => `<p>${i[0].toUpperCase() + i.slice(1)}</p>`) //first letter upper case
+      .toString() //turn to string here
+      .replace(/,/g, '') //so we can replace the commas and remove them from the HTML template
+      .replace('NoMilk', 'Lactose free') //user-friendly name for items in drinks selection
+      return infoDisplayed
+  }
+  return `<p>No extra info</p>`
+}
+
 //populate drinks array/data in vuex store
 let fetchDrinks = () => {
       let drinksData = []
@@ -102,4 +119,10 @@ let fetchSnacks = () => {
     })
 }
 
-export default {addOrder, addToCart, discardItems ,fetchDrinks, fetchSnacks}
+export default {
+  addOrder, 
+  addToCart, 
+  discardItems, 
+  extraInfo, 
+  fetchDrinks, 
+  fetchSnacks}

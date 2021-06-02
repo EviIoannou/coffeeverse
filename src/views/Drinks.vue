@@ -66,19 +66,7 @@
         functions.addToCart(id, 'drinks')
       },
       extraInfo(product) {
-        let info = Object.keys(product).filter(
-          (k) => product[k] == true && k != 'discount'
-        )
-
-        if (info.length > 0) {
-          let infoDisplayed = info
-            .map((i) => `<p>${i[0].toUpperCase() + i.slice(1)}</p>`) //first letter upper case
-            .toString() //turn to string here
-            .replace(/,/g, '') //so we can replace the commas and remove them from the HTML template
-            .replace('NoMilk', 'Lactose free') //user-friendly name
-          return infoDisplayed
-        }
-        return `<p>No extra info</p>`
+        return functions.extraInfo(product)
       }
     }
   }

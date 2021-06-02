@@ -35,6 +35,9 @@
             </div>
 
             <div class="mt-3 price">
+              <p v-b-tooltip.hover.html.bottom :title="extraInfo(snack)">
+                <b-icon-info-circle scale="1.2"></b-icon-info-circle>
+              </p>
               <b-card-text>{{ snack.price }} kr</b-card-text>
               <p>
                 <b-button
@@ -60,6 +63,9 @@
     methods: {
       addToCart(id) {
         functions.addToCart(id, 'snacks')
+      },
+      extraInfo(product) {
+        return functions.extraInfo(product)
       }
     }
   }
