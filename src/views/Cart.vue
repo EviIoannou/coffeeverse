@@ -17,14 +17,19 @@
         >
       </b-col>
     </b-row>
-    <empty-cart v-if="itemsInCart == 0" />
+    <empty-state
+      v-if="itemsInCart == 0"
+      img="https://firebasestorage.googleapis.com/v0/b/coffeeverse-by-evi.appspot.com/o/Website%20images%2Fshopping%20cart.png?alt=media&token=4c3f5075-fa0f-48a3-b72a-bd31a7fa4b67"
+      message="Your cart is empty"
+      linkText="Start shopping"
+    />
     <full-cart v-else />
   </b-container>
 </template>
 
 <script>
   import functions from '../../server/functions'
-  import EmptyCart from '../components/Cart/EmptyCart.vue'
+  import EmptyState from '../components/Common/EmptyState.vue'
   import FullCart from '../components/Cart/FullCart.vue'
   export default {
     data() {
@@ -38,7 +43,7 @@
       }
     },
 
-    components: { EmptyCart, FullCart }
+    components: { EmptyState, FullCart }
   }
 </script>
 
