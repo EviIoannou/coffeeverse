@@ -61,7 +61,6 @@ let fetchDrinks = () => {
               category: doc.data().Category,
               noMilk: doc.data()["No-milk"],
             })
-            console.log(doc.id, ' => ', doc.data())
           })
           return drinksData
         })
@@ -70,9 +69,6 @@ let fetchDrinks = () => {
             category: 'drinks',
             items: drinksData
           })
-        })
-        .then(() => {
-          console.log(store.state.drinks)
         })
         .catch((error) => {
           console.log('Error getting documents: ', error)
@@ -101,7 +97,6 @@ let fetchSnacks = () => {
           vegetarian: doc.data().Vegetarian,
           ingredients: doc.data().Ingredients,
         })
-        console.log(doc.id, ' => ', doc.data())
       })
       return snacksData
     })
@@ -110,9 +105,6 @@ let fetchSnacks = () => {
         category: 'snacks',
         items: snacksData
       })
-    })
-    .then(() => {
-      console.log(store.state.snacks)
     })
     .catch((error) => {
       console.log('Error getting documents: ', error)

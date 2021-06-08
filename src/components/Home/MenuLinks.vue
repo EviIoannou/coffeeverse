@@ -4,6 +4,7 @@
     <b-row align-h="around">
       <b-col xs="12" md="3" class="m-2 mt-0 m-md-0 menu-col">
         <b-img
+          alt="coffee-mug"
           class="menu-img"
           fluid
           src="https://firebasestorage.googleapis.com/v0/b/coffeeverse-by-evi.appspot.com/o/Website%20images%2Ficons8-coffee-to-go-80.png?alt=media&token=0a4ff4b3-fcea-4931-bc63-8bf5fcd0648c"
@@ -18,6 +19,7 @@
       </b-col>
       <b-col xs="12" md="3" class="m-2 mt-4 m-md-0 menu-col">
         <b-img
+          alt="sandwich"
           class="menu-img"
           fluid
           src="https://firebasestorage.googleapis.com/v0/b/coffeeverse-by-evi.appspot.com/o/Website%20images%2Ficons8-sandwich-80.png?alt=media&token=d9c4a9ef-1043-4c38-a0e8-1e8ad24439f2"

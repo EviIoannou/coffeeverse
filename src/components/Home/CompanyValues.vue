@@ -4,6 +4,7 @@
     <b-row align-h="around">
       <b-col xs="12" md="3" class="m-2 mt-0 m-md-0 values-col">
         <b-img
+          alt="drinks-variety"
           class="values-img"
           fluid
           src="https://firebasestorage.googleapis.com/v0/b/coffeeverse-by-evi.appspot.com/o/Website%20images%2Fcoffee-variety.png?alt=media&token=c2e68591-a6fd-40ef-9a5c-e9607d0bfbb1"
@@ -18,6 +19,7 @@
       </b-col>
       <b-col xs="12" md="3" class="m-2 mt-0 m-md-0 values-col">
         <b-img
+          alt="payment"
           class="values-img"
           fluid
           src="https://firebasestorage.googleapis.com/v0/b/coffeeverse-by-evi.appspot.com/o/Website%20images%2Fclip-online-food-delivery.png?alt=media&token=d1521c03-5b54-49b9-8b6d-a9633a3f6b09"
@@ -33,6 +35,7 @@
       </b-col>
       <b-col xs="12" md="3" class="m-2 mt-0 m-md-0 values-col">
         <b-img
+          alt="delivery-car"
           class="values-img"
           fluid
           src="https://firebasestorage.googleapis.com/v0/b/coffeeverse-by-evi.appspot.com/o/Website%20images%2Ffood-delivery.png?alt=media&token=4cab32f2-64b4-4eca-b496-18aeada8b047"
