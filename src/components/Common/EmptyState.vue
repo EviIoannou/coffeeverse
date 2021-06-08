@@ -2,7 +2,7 @@
   <b-container>
     <b-row>
       <b-col class="content"
-        ><b-img class="illustration" :src="img"></b-img>
+        ><b-img class="illustration" :src="img" alt="person-shopping"></b-img>
         <p class="h4">{{ message }}</p>
         <router-link to="/" class="homeLink">{{ linkText }}</router-link></b-col
       >

@@ -18,7 +18,7 @@
           >
           <b-card-img
             class="product-image"
-            img-alt="product-image"
+            alt="product-image"
             :src="product.image"
           ></b-card-img>
 

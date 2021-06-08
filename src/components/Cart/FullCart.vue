@@ -15,7 +15,7 @@
             <b-col lg="6">
               <b-card-img
                 :src="product.image"
-                alt="Image"
+                alt="product-image"
                 class="ml-2 mt-4 product-image rounded-0"
               ></b-card-img>
             </b-col>
@@ -102,7 +102,6 @@
         await functions.addOrder()
         // Then empty the cart
         await functions.discardItems()
-        await console.log(this.$store.state.cart)
         // Last, go to view the orders
         await this.$router.push('/orders')
       }
