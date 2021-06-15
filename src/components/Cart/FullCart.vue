@@ -42,9 +42,12 @@
                   ><b-icon-trash></b-icon-trash> Disard</b-button
                 >
                 <b-modal
+                  centered
                   :id="`${product.cartId}`"
                   title="Discard item"
                   ok-title="Discard"
+                  cancel-variant="primary"
+                  ok-variant="outline-danger"
                   @ok="functions.discardItem(product.cartId)"
                   >Do you want to discard this item from your cart?</b-modal
                 >

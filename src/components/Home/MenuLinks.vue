@@ -40,7 +40,7 @@
       ><b-col cols="1">
         <b-link to="/">
           <b-icon-arrow-up-circle-fill
-            class="h2 icon-btn"
+            class="h1 icon-btn"
             @click="scrollToTop"
           ></b-icon-arrow-up-circle-fill>
         </b-link>

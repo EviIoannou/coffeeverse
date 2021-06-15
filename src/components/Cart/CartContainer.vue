@@ -20,6 +20,9 @@
           id="discard"
           title="Discard items"
           ok-title="Discard"
+          centered
+          cancel-variant="primary"
+          ok-variant="outline-danger"
           @ok="functions.discardItems"
           >Do you want to discard all items from your cart?</b-modal
         >
