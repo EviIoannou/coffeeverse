@@ -5,6 +5,7 @@ import router from "./router";
 import store from "./store";
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 
+
 Vue.config.productionTip = false;
 
 // Use Bootstrap-Vue in the whole project

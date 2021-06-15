@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-
+import VuexPersistence from 'vuex-persist';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -54,6 +54,7 @@ export default new Vuex.Store({
         return items
       } return 0
     } 
-  }, 
+  },
+  plugins: [new VuexPersistence().plugin] 
 
 });
