@@ -36,11 +36,30 @@
         </div>
       </b-col>
     </b-row>
+    <b-row align-h="end"
+      ><b-col cols="1">
+        <b-link to="/">
+          <b-icon-arrow-up-circle-fill
+            class="h2 icon-btn"
+            @click="scrollToTop"
+          ></b-icon-arrow-up-circle-fill>
+        </b-link>
+      </b-col>
+    </b-row>
   </b-container>
 </template>
 
 <script>
-  export default {}
+  export default {
+    methods: {
+      scrollToTop() {
+        document.documentElement.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        })
+      }
+    }
+  }
 </script>
 
 <style scoped>
@@ -50,6 +69,9 @@
     text-align: center;
   }
 
+  .icon-btn {
+    color: #39a88b;
+  }
   .menu-col {
     display: flex;
     align-items: center;
