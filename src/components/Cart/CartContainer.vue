@@ -17,11 +17,12 @@
         >
 
         <b-modal
+          content-class="your-class"
           id="discard"
           title="Discard items"
           ok-title="Discard"
           centered
-          cancel-variant="primary"
+          cancel-variant="info"
           ok-variant="outline-danger"
           @ok="functions.discardItems"
           >Do you want to discard all items from your cart?</b-modal

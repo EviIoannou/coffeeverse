@@ -68,6 +68,9 @@
     }
   }
 </script>
+<style lang="scss">
+  @import './styles/custom.scss';
+</style>
 
 <style>
   * {

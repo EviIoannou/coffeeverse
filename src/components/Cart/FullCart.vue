@@ -46,7 +46,7 @@
                   :id="`${product.cartId}`"
                   title="Discard item"
                   ok-title="Discard"
-                  cancel-variant="primary"
+                  cancel-variant="info"
                   ok-variant="outline-danger"
                   @ok="functions.discardItem(product.cartId)"
                   >Do you want to discard this item from your cart?</b-modal
