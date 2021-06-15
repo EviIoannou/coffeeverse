@@ -8,7 +8,7 @@
         md="6"
         lg="4"
         v-for="product in addedInCart"
-        :key="product.cartID"
+        :key="product.cartId"
       >
         <b-card class="product-card" no-body>
           <b-row no-gutters>
@@ -37,9 +37,16 @@
                 </div>
 
                 <b-button
+                  v-b-modal="`${product.cartId}`"
                   variant="outline-danger"
-                  @click="functions.discardItems(product.cartId)"
                   ><b-icon-trash></b-icon-trash> Disard</b-button
+                >
+                <b-modal
+                  :id="`${product.cartId}`"
+                  title="Discard item"
+                  ok-title="Discard"
+                  @ok="functions.discardItems(product.cartId)"
+                  >Do you want to discard this item from the cart?</b-modal
                 >
               </b-card-body>
             </b-col>
