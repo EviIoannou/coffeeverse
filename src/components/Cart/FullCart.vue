@@ -45,8 +45,8 @@
                   :id="`${product.cartId}`"
                   title="Discard item"
                   ok-title="Discard"
-                  @ok="functions.discardItems(product.cartId)"
-                  >Do you want to discard this item from the cart?</b-modal
+                  @ok="functions.discardItem(product.cartId)"
+                  >Do you want to discard this item from your cart?</b-modal
                 >
               </b-card-body>
             </b-col>

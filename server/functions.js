@@ -17,8 +17,12 @@ let addOrder = () => {
 }
 
 //discard item(s)
-let discardItems = (cartId) => {
-  store.commit('discardItems', cartId)
+let discardItem = (cartId) => {
+  store.commit('discardItem', cartId)
+}
+
+let discardItems = () => {
+  store.commit('discardItems')
 }
 
 //extra info about an item
@@ -114,6 +118,7 @@ let fetchSnacks = () => {
 export default {
   addOrder, 
   addToCart, 
+  discardItem, 
   discardItems, 
   extraInfo, 
   fetchDrinks, 
