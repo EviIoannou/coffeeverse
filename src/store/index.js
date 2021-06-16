@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-
+import VuexPersistence from 'vuex-persist';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -31,14 +31,15 @@ export default new Vuex.Store({
        })
     },
 
-    discardItems(state, cartId) {
-      if(cartId) {
+    discardItem(state, cartId) {
         let index = state.cart.findIndex(p => p.cartId === cartId);
         state.cart.splice(index, 1)
-      }
-      else {state.cart.length = 0}
     },
-    
+
+    discardItems(state) {
+      Vue.set(state.cart=[])
+
+    },
     populate(state, data) {
       if (data.category == 'drinks') {
         state.drinks = data.items
@@ -53,6 +54,7 @@ export default new Vuex.Store({
         return items
       } return 0
     } 
-  }, 
+  },
+  plugins: [new VuexPersistence().plugin] 
 
 });

@@ -68,8 +68,9 @@
     }
   }
 </script>
+<style></style>
 
-<style>
+<style lang="scss">
   * {
     font-family: 'Montserrat', sans-serif;
   }
@@ -81,7 +82,7 @@
     padding: 0.2em 0.6em;
   }
   .navbar-light .navbar-nav .nav-link {
-    color: #17433e;
+    color: #17433e !important;
   }
 
   .navbar-light .navbar-nav .active {
@@ -118,4 +119,7 @@
       font-weight: bold;
     }
   }
+  @import './styles/cart.css';
+  @import './styles/productDisplay.css';
+  // @import './styles/custom.scss';
 </style>

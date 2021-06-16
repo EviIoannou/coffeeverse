@@ -8,7 +8,7 @@
         md="6"
         lg="4"
         v-for="product in addedInCart"
-        :key="product.cartID"
+        :key="product.cartId"
       >
         <b-card class="product-card" no-body>
           <b-row no-gutters>
@@ -37,10 +37,30 @@
                 </div>
 
                 <b-button
+                  v-b-modal="`${product.cartId}`"
                   variant="outline-danger"
-                  @click="functions.discardItems(product.cartId)"
                   ><b-icon-trash></b-icon-trash> Disard</b-button
                 >
+                <b-modal centered :id="`${product.cartId}`" title="Discard item"
+                  >Do you want to discard this item from your cart?
+                  <template #modal-footer="{ ok, cancel }">
+                    <p>
+                      <b-button @click="cancel()" class="cancel-btn"
+                        >Cancel</b-button
+                      >
+                    </p>
+                    <p>
+                      <b-button
+                        @click="
+                          ok()
+                          functions.discardItem(product.cartId)
+                        "
+                        class="ok-btn"
+                        >Discard</b-button
+                      >
+                    </p>
+                  </template>
+                </b-modal>
               </b-card-body>
             </b-col>
           </b-row>
@@ -136,26 +156,5 @@
   .shop {
     font-family: 'Patrick Hand';
     font-size: 18px;
-  }
-  .checkout-link {
-    background-color: #39a88b;
-    border: none;
-    border-radius: 10px;
-    padding: 0.7em;
-  }
-  .checkout-link a {
-    color: #f0f6f2;
-    text-decoration: none;
-  }
-  @media only screen and (max-width: 768px) {
-    .cart-items {
-      height: 60vh;
-      overflow-y: auto;
-    }
-  }
-  @media only screen and (min-width: 1200px) {
-    .card.product-card {
-      width: 80%;
-    }
   }
 </style>
