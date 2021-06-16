@@ -15,17 +15,27 @@
           v-b-modal.discard
           ><b-icon-trash></b-icon-trash> Disard all</b-button
         >
-
         <b-modal
           content-class="your-class"
           id="discard"
           title="Discard items"
-          ok-title="Discard"
           centered
-          cancel-variant="info"
-          ok-variant="outline-danger"
-          @ok="functions.discardItems"
-          >Do you want to discard all items from your cart?</b-modal
+          >Do you want to discard all items from your cart?
+          <template #modal-footer="{ ok, cancel }">
+            <p>
+              <b-button @click="cancel()" class="cancel-btn">Cancel</b-button>
+            </p>
+            <p>
+              <b-button
+                @click="
+                  ok()
+                  functions.discardItems()
+                "
+                class="ok-btn"
+                >Discard</b-button
+              >
+            </p>
+          </template></b-modal
         >
       </b-col>
     </b-row>

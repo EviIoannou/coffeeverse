@@ -2,7 +2,7 @@
   <b-container fluid id="order" class="mt-5 mb-3">
     <h1 class="h2">Discover our menu</h1>
     <b-row align-h="around">
-      <b-col xs="12" md="3" class="m-2 mt-0 m-md-0 menu-col">
+      <b-col xs="12" md="4" lg="3" class="m-2 mt-0 m-md-0 menu-col">
         <b-img
           alt="coffee-mug"
           class="menu-img"
@@ -17,7 +17,7 @@
           </b-button>
         </div>
       </b-col>
-      <b-col xs="12" md="3" class="m-2 mt-4 m-md-0 menu-col">
+      <b-col xs="12" md="4" lg="3" class="m-2 mt-4 m-md-0 menu-col">
         <b-img
           alt="sandwich"
           class="menu-img"

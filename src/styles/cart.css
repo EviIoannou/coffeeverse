@@ -1,0 +1,46 @@
+.cancel-btn {
+    background-color: #39a88b;
+    border-color: #39a88b;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background-color: transparent;
+    border-color: #39a88b;
+    color: #39a88b
+}
+
+.ok-btn {
+    background-color: transparent;
+    border-color: #dc3545;
+    color: #dc3545
+}
+
+.ok-btn:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white
+}
+
+.checkout-link, .checkout-link:hover{
+    background-color: #39a88b;
+    border: 0.5px solid #39a88b;
+    border-radius: 10px;    
+    color: #f0f6f2;
+    padding: 0.5em;
+  }
+
+  .checkout-link a {
+    text-decoration: none;
+  }
+  @media only screen and (max-width: 768px) {
+    .cart-items {
+      height: 60vh;
+      overflow-y: auto;
+    }
+  }
+  @media only screen and (min-width: 1200px) {
+    .card.product-card {
+      width: 80%;
+    }
+  }

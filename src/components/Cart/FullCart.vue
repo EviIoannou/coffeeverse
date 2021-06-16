@@ -41,16 +41,26 @@
                   variant="outline-danger"
                   ><b-icon-trash></b-icon-trash> Disard</b-button
                 >
-                <b-modal
-                  centered
-                  :id="`${product.cartId}`"
-                  title="Discard item"
-                  ok-title="Discard"
-                  cancel-variant="info"
-                  ok-variant="outline-danger"
-                  @ok="functions.discardItem(product.cartId)"
-                  >Do you want to discard this item from your cart?</b-modal
-                >
+                <b-modal centered :id="`${product.cartId}`" title="Discard item"
+                  >Do you want to discard this item from your cart?
+                  <template #modal-footer="{ ok, cancel }">
+                    <p>
+                      <b-button @click="cancel()" class="cancel-btn"
+                        >Cancel</b-button
+                      >
+                    </p>
+                    <p>
+                      <b-button
+                        @click="
+                          ok()
+                          functions.discardItem(product.cartId)
+                        "
+                        class="ok-btn"
+                        >Discard</b-button
+                      >
+                    </p>
+                  </template>
+                </b-modal>
               </b-card-body>
             </b-col>
           </b-row>
@@ -146,26 +156,5 @@
   .shop {
     font-family: 'Patrick Hand';
     font-size: 18px;
-  }
-  .checkout-link {
-    background-color: #39a88b;
-    border: none;
-    border-radius: 10px;
-    padding: 0.7em;
-  }
-  .checkout-link a {
-    color: #f0f6f2;
-    text-decoration: none;
-  }
-  @media only screen and (max-width: 768px) {
-    .cart-items {
-      height: 60vh;
-      overflow-y: auto;
-    }
-  }
-  @media only screen and (min-width: 1200px) {
-    .card.product-card {
-      width: 80%;
-    }
   }
 </style>

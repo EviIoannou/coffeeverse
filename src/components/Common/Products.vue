@@ -65,7 +65,3 @@
     }
   }
 </script>
-
-<style scoped>
-  @import '../../styles/productDisplay.css';
-</style>
